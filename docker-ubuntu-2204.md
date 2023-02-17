@@ -22,7 +22,6 @@ $ apt-cache policy docker-ce
 $ sudo apt install docker-ce -y
 
 $ sudo systemctl enable docker && sudo systemctl start docker
-
 ```
 
 *check docker is working*
@@ -39,7 +38,6 @@ $ sudo usermod -aG docker ${USER}
 $ sudo curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 
 $ sudo chmod +x /usr/local/bin/docker-compose
-
 ```
 
 *check docker-compose is working*
