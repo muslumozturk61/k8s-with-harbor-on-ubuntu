@@ -4,7 +4,7 @@
 
 **1:** docker kurulumu
 
-```
+```shell
 $ sudo apt update
 
 $ sudo apt upgrade
@@ -32,7 +32,7 @@ $ docker --version
 
 **2:** docker-compose kurulumu
 
-```
+```shell
 $ sudo usermod -aG docker ${USER}
 
 $ sudo curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose

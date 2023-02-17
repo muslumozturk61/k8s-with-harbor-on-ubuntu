@@ -22,11 +22,7 @@ $ sudo update-ca-certificates
 ```
 **2:** kullanıcı ve private repository tanımlama
 
-
-
-harbor kurulduktan sonra bir tane private repo açılıp içine image atabilriiz. image atmak içinse bir tane admin yetkili user ekleyebiliriz.
-
--- kubernetes --
+**3:** kubernetes ayarları
 
 kubernetes için öncelikle bir private registry secret üreteceğiz. username ve password olarak açtığımız admin yetkili user ı verebiliriz.
 
@@ -34,6 +30,7 @@ kubernetes için öncelikle bir private registry secret üreteceğiz. username v
 $ kubectl create secret docker-registry muslumozturk-harbor-registry --docker-server=<registry> --docker-username=<username> --docker-password=<password> --docker-email=<email_address>
 ```
 daha sonra bu secret in bütün podlarda kullanılamsı için default service accoutn a inject etmemiz gerekiyor. ister editleyerek ister patchleyerek bunu yapabiliriz.
+
 ```shell
 $ kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "muslumozturk-harbor-registry"}]}'
 ```

@@ -6,10 +6,10 @@
 **0:** minimum gereksinimler
 
 | Resource | Minimum | Recommended |
-| ----------- | ----------- |  ----------- |
-| CPU |	2 CPU |	4 CPU |
-| Mem |	4 GB |	8 GB |
-| Disk | 40 GB | 160 GB|
+| -------- | ------- | ----------- |
+| CPU      |   2 CPU |	  4 CPU    |
+| Mem      |	4 GB |	  8 GB     |
+| Disk     |   40 GB |  160 GB     |
 
 ---
 
