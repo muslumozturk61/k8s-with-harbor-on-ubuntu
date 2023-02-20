@@ -18,22 +18,27 @@
 **3:** Vmware Work Station ile StaticIP ayarları
 
 - Bu işlem yapılır ubuntu kapalı olmalıdır.
-- sanal makinenin mac adresi `settings\network settins\....` bölümünden öğrenilir. Örneğin:(00:0C:29:F0:7C:73)
-- Network driver ismi `adad` bölümünden öğrenilir. Örneğin:(VMnet8)
+- sanal makinenin mac adresi `Edit virtual machine settings\Network Adapter\Advanced` bölümünden öğrenilir. Örneğin:(00:0C:29:F0:7C:73)
+  
+  ![vmware-machine-mac-address](./images/vmware-machine-mac-address.png)
 
-`C:\ProgramData\VMware\vmnetdhcp.conf` dosya içine aşağıdaki kodlar eklenir.
+- Network driver ismi `Edit\Virtual Network Editör` ekranından öğrenilir. Örneğin:(VMnet8)
+ 
+  ![vmware-virtual-network-editor](./images/vmware-virtual-network-editor.png)
 
-```
-#Ubuntu x86
-host VMnet8 {
-    hardware ethernet 00:0C:29:F0:7C:73;
-    fixed-address 2.2.2.7;
-}
-```
+- `C:\ProgramData\VMware\vmnetdhcp.conf` dosya içine aşağıdaki kodlar eklenir.
 
-`services.msc` den 'Vmware DHCP' Servisi yeniden başlatılır. 
+    ```
+    #Ubuntu x86
+    host VMnet8 {
+        hardware ethernet 00:0C:29:F0:7C:73;
+        fixed-address 2.2.2.7;
+    }
+    ```
 
-İşletim sistemi başlatılır ve Web Tarayıcıdan herhangi siteye girilerek internete erişim sorunu var mı kontrol edilir.
+- `services.msc` den `VMware DHCP Service` servisi yeniden başlatılır. 
+
+- İşletim sistemi başlatılır ve Web Tarayıcıdan herhangi siteye girilerek internete erişim sorunu var mı kontrol edilir.
 
 ---
 
