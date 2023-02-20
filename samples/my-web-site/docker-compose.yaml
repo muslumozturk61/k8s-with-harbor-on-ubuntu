@@ -1,0 +1,14 @@
+version: '3'
+
+networks:
+  my-network:
+
+services:
+  my-web-site:
+    container_name: my-web-site-container
+    image: my-web-site-image:latest
+    restart: always
+    networks:
+      - my-network
+    ports:
+    - "8090:80"

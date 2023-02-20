@@ -168,7 +168,7 @@ Kullanıcı eklendikten sonra `"SET AS ADMIN"` butonuna tıklayarak kullanıcıy
 
 **8:** private repository oluşturma
 
-`"Project"` menüsünden repositorylerin olduğu sayfa açılır. `"NEW PROJECT"` butonuna tıklayarak yeni repository tanımlama işlemini yapıyoruz. Private repository oluşturmak istediğimiz için `"public"` özelliğini seçili olmamasına dikkat ediyoruz.  
+`"Project"` menüsünden repositorylerin olduğu sayfa açılır. `"NEW PROJECT"` butonuna tıklayarak yeni repository tanımlama işlemini yapıyoruz. Private repository oluşturmak istediğimiz için `"public"` özelliğinin seçili <ins>**olmamasına**</ins> dikkat ediyoruz.  
 
 ---
 
