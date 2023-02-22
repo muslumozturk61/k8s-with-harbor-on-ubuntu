@@ -42,7 +42,7 @@ $ curl http://192.168.199.51:31035
 $ curl --insecure https://192.168.199.51:32381
 ```
 
-*note : to uninstall ingress-controller from kubernetes*
+*Note : to uninstall ingress-controller from kubernetes*
 ```shell
 $ # helm uninstall ingress-controller
 ```
