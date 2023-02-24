@@ -45,7 +45,7 @@ $ ip a
 
 $ sipcalc 192.168.199.51/24
 
-$ touch metallb-config.yaml && metallb-config.yaml <<-EOF
+$ cat > metallb-config.yaml << EOF
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
@@ -76,7 +76,7 @@ $ kubectl get deployments
 ```
 
 ```shell
-$ touch sample-deployment.yaml && tee -a sample-deployment.yaml << END
+$ cat > sample-deployment.yaml << EOF
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -96,13 +96,13 @@ spec:
       containers:
       - image: nginx
         name: nginx
-END
+EOF
 
 $ kubectl apply -f sample-deployment.yaml
 
 $ kubectl expose deploy nginx-deploy --port 80
 
-$ touch ingress.yaml && tee -a ingress.yaml << END
+$ cat > ingress.yaml << EOF
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -126,7 +126,7 @@ spec:
                 number: 80
           path: /
           pathType: ImplementationSpecific
-END
+EOF
 
 
 $ sudo nano /etc/hosts
