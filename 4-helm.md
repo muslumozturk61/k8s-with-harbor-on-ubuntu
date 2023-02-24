@@ -76,7 +76,7 @@ $ kubectl get deployments
 ```
 
 ```shell
-$ touch sample-deployment.yaml && sample-deployment.yaml <<-EOF
+$ touch sample-deployment.yaml && tee -a sample-deployment.yaml << END
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -96,13 +96,13 @@ spec:
       containers:
       - image: nginx
         name: nginx
-EOF
+END
 
 $ kubectl apply -f sample-deployment.yaml
 
 $ kubectl expose deploy nginx-deploy --port 80
 
-$ touch ingress.yaml && ingress.yaml <<-EOF
+$ touch ingress.yaml && tee -a ingress.yaml << END
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -126,7 +126,7 @@ spec:
                 number: 80
           path: /
           pathType: ImplementationSpecific
-EOF
+END
 
 
 $ sudo nano /etc/hosts
