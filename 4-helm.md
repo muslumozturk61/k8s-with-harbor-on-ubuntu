@@ -128,6 +128,7 @@ spec:
           pathType: ImplementationSpecific
 EOF
 
+$ kubectl apply -f ingress.yaml
 
 $ sudo nano /etc/hosts
  
