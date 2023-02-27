@@ -23,7 +23,7 @@ $ echo '192.168.199.140  harbor.muslumozturk.com' | sudo tee -a /etc/hosts
 **2:** sertifika üretimi
 
 ```shell
-$ mkdir harbor-certs && cd harbor-certs
+$ mkdir harbor-files && cd harbor-files
 
 $ sudo apt install openssl
 
@@ -130,10 +130,17 @@ $ sudo cp harbor.muslumozturk.com.key /etc/harbor/
 
 ```shell
 $ wget https://github.com/goharbor/harbor/releases/download/v1.10.16/harbor-online-installer-v1.10.16.tgz
+
 $ tar xzvf harbor-online-installer-v1.10.16.tgz
 ```
 
 *harbor/harbor.yml dosyasının düzenlenmesi*
+```
+$ cd harbor
+
+$ sudo nano harbor.yml
+```
+
 ```yaml
 hostname: harbor.muslumozturk.com
 https:
