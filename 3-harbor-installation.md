@@ -33,7 +33,7 @@ $ openssl genrsa -out harbor.muslumozturk.com.key 4096
 
 $ openssl req -sha512 -new -subj "/C=CN/ST=Istanbul/L=Istanbul/O=devops/OU=Personal/CN=harbor.muslumozturk.com" -key harbor.muslumozturk.com.key -out harbor.muslumozturk.com.csr
 
-$ touch v3.ext && v3.ext <<-EOF
+$ cat > v3.ext << EOF
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
