@@ -18,6 +18,8 @@ $ sudo apt-get install helm
 **2:** metallb kurulumu
 
 ```shell
+$ export KUBE_EDITOR="nano"
+
 $ kubectl edit configmap -n kube-system kube-proxy
 
 # aşağıdaki gibi değitirilmelidir
@@ -136,7 +138,7 @@ $ sudo nano /etc/hosts
  
 Save it and check
 
-$ curl http://nginx.devops.com
+$ curl http://mysite.muslumozturk.com
 ```
 
 
