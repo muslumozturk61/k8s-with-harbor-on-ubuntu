@@ -23,6 +23,8 @@ $ echo '192.168.199.140  harbor.muslumozturk.com' | sudo tee -a /etc/hosts
 **2:** sertifika üretimi
 
 ```shell
+$ mkdir harbor-certs || cd harbor-certs
+
 $ sudo apt install openssl
 
 $ openssl genrsa -out ca.key 4096
