@@ -20,7 +20,6 @@ $ sudo cp ca.crt /usr/local/share/ca-certificates
 
 $ sudo update-ca-certificates
 ```
-**2:** kullanıcı ve private repository tanımlama
 
 **3:** kubernetes ayarları
 
@@ -29,7 +28,7 @@ kubernetes için öncelikle bir private registry secret üreteceğiz. username v
 ```shell
 $ kubectl create secret docker-registry muslumozturk-harbor-registry --docker-server=<registry> --docker-username=<username> --docker-password=<password> --docker-email=<email_address>
 ```
-daha sonra bu secret in bütün podlarda kullanılamsı için default service account a inject etmemiz gerekiyor. ister editleyerek ister patchleyerek bunu yapabiliriz.
+daha sonra bu secret in bütün podlarda kullanılaması için default service account a inject etmemiz gerekiyor. ister editleyerek ister patchleyerek bunu yapabiliriz.
 
 ```shell
 $ kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "muslumozturk-harbor-registry"}]}'
