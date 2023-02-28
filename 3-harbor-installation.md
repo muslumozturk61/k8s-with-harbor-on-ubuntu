@@ -68,6 +68,7 @@ $ sudo cp ca.crt /usr/local/share/ca-certificates
 
 $ sudo update-ca-certificates
 ```
+
 ---
 
 **4:** docker kurulumu
@@ -129,9 +130,9 @@ $ sudo cp harbor.muslumozturk.com.key /etc/harbor/
 ```
 
 ```shell
-$ wget https://github.com/goharbor/harbor/releases/download/v1.10.16/harbor-online-installer-v1.10.16.tgz
+$ wget https://github.com/goharbor/harbor/releases/download/v2.7.1/harbor-online-installer-v2.7.1.tgz
 
-$ tar xzvf harbor-online-installer-v1.10.16.tgz
+$ tar xzvf harbor-online-installer-v2.7.1.tgz
 ```
 
 *harbor/harbor.yml dosyasının düzenlenmesi*
@@ -152,9 +153,9 @@ harbor_admin_password: Harbor12345
 
 
 ```shell
-$ sudo ./prepare --with-notary --with-clair --with-chartmuseum
+$ sudo ./prepare
 
-$ sudo ./install.sh
+$ sudo ./install.sh --with-notary --with-trivy
 
 ```
 
@@ -197,7 +198,7 @@ C:\ProgramData\docker\certs.d\harbor.muslumozturk.com
 ```shell
 $ docker login harbor.muslumozturk.com
 
-#Note:logout olmak istersek aşağıdaki kod kullanılır
+#Note:logout olmak istersek aşağıdaki komut kullanılır
 $ docker logout harbor.muslumozturk.com 
 ```
 
