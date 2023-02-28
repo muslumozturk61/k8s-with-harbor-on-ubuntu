@@ -18,6 +18,7 @@ $ sudo apt-get install helm
 **2:** metallb kurulumu
 
 ```shell
+# varsayılan editör nano yapılır
 $ export KUBE_EDITOR="nano"
 
 $ kubectl edit configmap -n kube-system kube-proxy
@@ -45,6 +46,7 @@ $ sudo apt install sipcalc
 
 $ ip a
 
+# loadbalancer'da kullanabilecek ip aralığı bakılır
 $ sipcalc 192.168.199.51/24
 
 $ cat > metallb-config.yaml << EOF

@@ -152,7 +152,7 @@ harbor_admin_password: Harbor12345
 
 
 ```shell
-$ sudo ./prepare
+$ sudo ./prepare --with-notary --with-clair --with-chartmuseum
 
 $ sudo ./install.sh
 
@@ -179,6 +179,41 @@ Kullanıcı eklendikten sonra `"SET AS ADMIN"` butonuna tıklayarak kullanıcıy
 
 `"Project"` menüsünden repositorylerin olduğu sayfa açılır. `"NEW PROJECT"` butonuna tıklayarak yeni repository tanımlama işlemini yapıyoruz. Private repository oluşturmak istediğimiz için `"public"` özelliğinin seçili <ins>**olmamasına**</ins> dikkat ediyoruz.  
 
+---
+
+**9:** docker desktop üzerinden harbor'a imaj gönderme
+
+*docker desktop ile harbor a bağlanmak için harbor' a ait ssl sertifikalar aşağıdaki dosyaların içine konulmalı ve  docker desktop restart edilmelidir*
+
+```
+C:\Users\muslum\.docker\certs.d\harbor.muslumozturk.com
+
+C:\ProgramData\docker\certs.d\harbor.muslumozturk.com
+```
+
+![docker-desktop-harbor-ssl](images/docker-desktop-harbor-ssl.png)
+
+*docker'la harbora oluşturmuş olduğumuz  `pushuser` kullanıcısı ile login oluyoruz.*
+```shell
+$ docker login harbor.muslumozturk.com
+
+#Note:logout olmak istersek aşağıdaki kod kullanılır
+$ docker logout harbor.muslumozturk.com 
+```
+
+
+
+*proje içerisinden imaj oluşturulur*
+```shell
+$ docker build -t my-test-image:v1 .
+```
+
+*imajımızın tag ini oluşturuyoruz ve harbor'a push yapıyoruz*
+```shell
+$ docker tag my-test-image:v1 harbor.muslumozturk.com/my-repository/my-test-image:v1
+
+$ docker push harbor.muslumozturk.com/my-repository/my-test-image:v1
+```
 ---
 
 ## Kaynaklar

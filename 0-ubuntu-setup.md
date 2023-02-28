@@ -57,6 +57,14 @@ $ sudo apt install curl -y
 $ sudo apt install net-tools -y
 $ sudo apt install nautilus-admin -y
 $ sudo nautilus -q
----
+```
+*sağtık menüsünden Yeni Metin belgesi çıkarılması*
+```
+$ cd ~/Templates && touch "Metin Belgesi.txt"
+
+```
+
+
+
 
 
