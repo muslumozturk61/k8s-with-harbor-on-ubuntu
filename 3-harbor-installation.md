@@ -16,7 +16,7 @@
 **1:** host dosyasına domain'in tanımlanması
 
 ```shell
-$ echo '192.168.199.140  harbor.muslumozturk.com' | sudo tee -a /etc/hosts
+$ echo '192.168.199.54  harbor.muslumozturk.com' | sudo tee -a /etc/hosts
 ```
 ---
 
@@ -184,7 +184,7 @@ Kullanıcı eklendikten sonra `"SET AS ADMIN"` butonuna tıklayarak kullanıcıy
 
 **9:** docker desktop üzerinden harbor'a imaj gönderme
 
-*docker desktop ile harbor a bağlanmak için harbor' a ait ssl sertifikalar aşağıdaki dosyaların içine konulmalı ve  docker desktop restart edilmelidir*
+*docker desktop ile harbor a bağlanmak için harbor' a ait ssl sertifikalar aşağıdaki dosyaların içine konulmalı ve  **Docker Desktop** uygulaması restart edilmelidir*
 
 ```
 C:\Users\muslum\.docker\certs.d\harbor.muslumozturk.com

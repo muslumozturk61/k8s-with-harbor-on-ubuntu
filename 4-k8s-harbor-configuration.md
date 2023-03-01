@@ -6,7 +6,7 @@ Harbor kurulum sürecinde oluşturduğumuz sertifikaları kullanacacağız.
 **1:** host dosyasına domain'in tanımlanması
 
 ```shell
-$ echo '192.168.199.140  harbor.muslumozturk.com' | sudo tee -a /etc/hosts
+$ echo '192.168.199.54  harbor.muslumozturk.com' | sudo tee -a /etc/hosts
 ```
 
 **2:** ubuntuda kök sertifikaların tanılması
