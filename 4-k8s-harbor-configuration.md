@@ -5,6 +5,8 @@ Harbor kurulum sürecinde oluşturduğumuz sertifikaları kullanacacağız.
 
 **1:** host dosyasına domain'in tanımlanması
 
+*Bu işlemler hem master hemde worker node'larda yapılacaktır*
+
 ```shell
 $ echo '192.168.199.54  harbor.muslumozturk.com' | sudo tee -a /etc/hosts
 ```
@@ -23,11 +25,18 @@ $ sudo update-ca-certificates
 
 **3:** kubernetes ayarları
 
+*Bu işlemler sadece master node'da yapılacaktır*
+
 kubernetes için öncelikle bir private registry secret üreteceğiz. username ve password olarak açtığımız admin yetkili user ı verebiliriz.
 
 ```shell
 $ kubectl create secret docker-registry muslumozturk-harbor-registry --docker-server=<registry> --docker-username=<username> --docker-password=<password> --docker-email=<email_address>
+
+# örnek komut
+$ kubectl create secret docker-registry muslumozturk-harbor-registry --docker-server=harbor.muslumozturk.com --docker-username=pushuser --docker-password=Push12345 --docker-email=pushuser@muslumozturk.com
 ```
+
+
 daha sonra bu secret in bütün podlarda kullanılaması için default service account a inject etmemiz gerekiyor. ister editleyerek ister patchleyerek bunu yapabiliriz.
 
 ```shell

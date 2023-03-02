@@ -79,6 +79,20 @@ $ helm ls
 $ kubectl get deployments
 ```
 
+*check is ingress-nginx working*
+
+```shell
+# to see http and https ports
+$ kubectl --namespace default get services -o wide -w ingress-controller-ingress-nginx-controller
+
+# testing ports, must return http 404 exception
+$ curl http://192.168.199.51:31035 
+
+$ curl --insecure https://192.168.199.51:32381
+```
+
+*starting sample deployment*
+
 ```shell
 $ cat > sample-deployment.yaml << EOF
 apiVersion: apps/v1
@@ -140,24 +154,10 @@ $ sudo nano /etc/hosts
  
 Save it and check
 
+# tarayıcınızdan http://mysite.muslumozturk.com adresine gidin yada aşağıdaki komutu çalıştırabilirsiniz
 $ curl http://mysite.muslumozturk.com
 ```
 
-
-
-
-
-*check is ingress-nginx working*
-
-```shell
-# to see http and https ports
-$ kubectl --namespace default get services -o wide -w ingress-controller-ingress-nginx-controller
-
-# testing ports, must return http 404 exception
-$ curl http://192.168.199.51:31035 
-
-$ curl --insecure https://192.168.199.51:32381
-```
 
 *Note : to uninstall ingress-controller from kubernetes*
 ```shell
