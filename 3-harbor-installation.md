@@ -159,6 +159,39 @@ $ sudo ./install.sh --with-notary --with-trivy
 
 ```
 
+*harbor restart sorunu çözümü*
+
+```shell
+$ sudo cp docker-compose.yml /etc/harbor/
+
+$ sudo -s
+
+$ sudo cat > /etc/systemd/system/harbor.service << EOF
+[Unit]
+Description=Harbor
+After=docker.service systemd-networkd.service systemd-resolved.service
+Requires=docker.service
+Documentation=http://github.com/vmware/harbor
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5
+ExecStart=/usr/local/bin/docker-compose -f /etc/harbor/docker-compose.yml up
+ExecStop=/usr/local/bin/docker-compose -f /etc/harbor/docker-compose.yml down
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+$ exit
+
+$ systemctl enable harbor && systemctl start harbor 
+
+$ systemctl start harbor 
+
+```
+
 *kontrol etmek için internet tarayıcıdan harbor arayüzüne girilir*
 [https://harbor.muslumozturk.com](https://harbor.muslumozturk.com)
 
