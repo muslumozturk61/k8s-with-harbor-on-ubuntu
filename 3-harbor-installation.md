@@ -8,8 +8,8 @@
 | Resource | Minimum | Recommended |
 | -------- | ------- | ----------- |
 | CPU      |   2 CPU |	  4 CPU    |
-| Mem      |	4 GB |	  8 GB     |
-| Disk     |   40 GB |  160 GB     |
+| Mem      |   4 GB  |	  8 GB     |
+| Disk     |  40 GB  |  160 GB     |
 
 ---
 
@@ -186,7 +186,7 @@ EOF
 
 $ exit
 
-$ systemctl enable harbor && systemctl start harbor 
+$ systemctl enable harbor
 
 $ systemctl start harbor 
 
