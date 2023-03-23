@@ -58,6 +58,15 @@ metadata:
 spec:
   addresses:
   - 192.168.199.10-192.168.199.10
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: default
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - default
 EOF
 
 $ kubectl apply -f metallb-config.yaml
